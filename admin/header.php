@@ -92,7 +92,7 @@
                         </li>
 
                         <li>
-                            <a href="user.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Lokasi</span></a>
+                            <a href="lokasi.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Lokasi</span></a>
                         </li>
 
                         <li>
