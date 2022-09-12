@@ -51,54 +51,61 @@
                     $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id ORDER BY arsip_id DESC");
                     while($p = mysqli_fetch_array($arsip)){
                         ?>
-                        <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><?php echo date('H:i:s  d-m-Y',strtotime($p['arsip_waktu_upload'])) ?></td>
-                            <td>
+                    <tr>
+                        <td><?php echo $no++; ?></td>
+                        <td><?php echo date('H:i:s  d-m-Y',strtotime($p['arsip_waktu_upload'])) ?></td>
+                        <td>
 
-                                <b>TTL/GOLONGAN DARAH</b> : <?php echo $p['arsip_TTL/GOLONGAN DARAH'] ?><br>
-                                <b>Nik,Kk</b> : <?php echo $p['arsip_Nik,Kk'] ?><br>
-                                <b>Status</b> : <?php echo $p['arsip_Status'] ?><br>
+                            <b>TTL/GOLONGAN DARAH</b> : <?php echo $p['arsip_TTL/GOLONGAN DARAH'] ?><br>
+                            <b>Nik,Kk</b> : <?php echo $p['arsip_Nik,Kk'] ?><br>
+                            <b>Status</b> : <?php echo $p['arsip_Status'] ?><br>
 
-                            </td>
-                            <td><?php echo $p['kategori_nama'] ?></td>
-                            <td><?php echo $p['petugas_nama'] ?></td>
-                            <td><?php echo $p['arsip_keterangan'] ?></td>
-                            <td class="text-center">
+                        </td>
+                        <td><?php echo $p['kategori_nama'] ?></td>
+                        <td><?php echo $p['petugas_nama'] ?></td>
+                        <td><?php echo $p['arsip_keterangan'] ?></td>
+                        <td class="text-center">
 
 
 
-                                <div class="modal fade" id="exampleModal_<?php echo $p['arsip_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">PERINGATAN!</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Apakah anda yakin ingin menghapus data ini? <br>file dan semua yang berhubungan akan dihapus secara permanen.
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
-                                                <a href="arsip_hapus.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-primary"><i class="fa fa-check"></i> &nbsp; Ya, hapus</a>
-                                            </div>
+                            <div class="modal fade" id="exampleModal_<?php echo $p['arsip_id']; ?>" tabindex="-1"
+                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">PERINGATAN!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Apakah anda yakin ingin menghapus data ini? <br>file dan semua yang
+                                            berhubungan akan dihapus secara permanen.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Batalkan</button>
+                                            <a href="arsip_hapus.php?id=<?php echo $p['arsip_id']; ?>"
+                                                class="btn btn-primary"><i class="fa fa-check"></i> &nbsp; Ya, hapus</a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
 
-                                <div class="btn-group">
-                                    <a target="_blank" class="btn btn-default" href="../arsip/<?php echo $p['arsip_file']; ?>"><i class="fa fa-download"></i></a>
-                                    <a target="_blank" href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i class="fa fa-search"></i> Preview</a>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal_<?php echo $p['arsip_id']; ?>">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <?php 
+                            <div class="btn-group">
+                                <a target="_blank" class="btn btn-default"
+                                    href="../arsip/<?php echo $p['arsip_file']; ?>"><i class="fa fa-download"></i></a>
+                                <a target="_blank" href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>"
+                                    class="btn btn-default"><i class="fa fa-search"></i> Preview</a>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal_<?php echo $p['arsip_id']; ?>">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php 
                     }
                     ?>
                 </tbody>

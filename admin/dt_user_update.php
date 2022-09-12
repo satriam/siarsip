@@ -2,7 +2,8 @@
 include '../koneksi.php';
 $id  = $_POST['id'];
 $nama  = $_POST['nama'];
-$ttl = $_POST['ttl'];
+$tempat = $_POST['tempat_lahir'];
+$tanggal = $_POST['tanggal_lahir'];
 $goldar = $_POST['goldar'];
 $nik = $_POST['nik'];
 $status = $_POST['status_kawin'];
@@ -17,5 +18,5 @@ $serata = $_POST['serata'];
 $jurusan = $_POST['jurusan'];
 $univ = $_POST['univ'];
 
-mysqli_query($koneksi, "update diri set nama='$nama', ttl='$ttl',goldar='$goldar',nik='$nik',status_kawin='$status',alamat='$alamat',email='$email',npwp='$npwp',nip='$nip', telpon1='$telpon1',telpon2='$telpon2',bpjs='$bpjs',serata='$serata',jurusan='$jurusan',univ='$univ' where id='$id'");
+mysqli_query($koneksi, "update diri set nama='$nama', tempat_lahir='$tempat',tanggal_lahir='$tanggal',goldar='$goldar',nik='$nik',status_kawin='$status',alamat='$alamat',email='$email',npwp='$npwp',nip='$nip', telpon1='$telpon1',telpon2='$telpon2',bpjs='$bpjs',serata='$serata',jurusan='$jurusan',univ='$univ' where id='$id'");
 header("location:dt_user.php");
