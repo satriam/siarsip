@@ -1,0 +1,27 @@
+.jumbotron{
+	background-image: url(gambar/depan/slider-bamedika.jpg);
+	background-size: cover;
+	height: 700px;
+	text-align: center;
+	margin-top: -10px;
+}
+.jumbotron .display-xs-3{
+	color: darkred;
+	margin-top: 20px;
+	background-color: darkgray;
+}
+.jumbotron p{
+	color: black;
+	font-size: 40px;
+	font-family: cursive;
+
+}
+.jumbotron strong{
+	color: darkred;
+	font-size: 20px;
+}
+.jumbotron hr{
+	border-color: #F05F40;
+	width: 70px;
+	border-width: 4px;
+}
