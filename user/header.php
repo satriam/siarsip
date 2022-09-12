@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.php"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
+                        <a href="index.php"><img class="main-logo" src="../assets/img/logo/logobaru.png" alt="" width="80px" height="80px"/></a>
                     </div>
                 </div>
             </div>

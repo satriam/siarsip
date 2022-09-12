@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info-cs">
-                    <h3 class="box-title">Petugas</h3>
+                    <h3 class="box-title">Admin</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash"></div>
@@ -38,7 +38,7 @@
                             <i class="fa fa-level-up" aria-hidden="true"></i> 
                             <span class="counter text-success">
                                 <?php 
-                                $jumlah_petugas = mysqli_query($koneksi,"select * from petugas");
+                                $jumlah_petugas = mysqli_query($koneksi,"select * from admin");
                                 ?>
                                 <span class="counter"><?php echo mysqli_num_rows($jumlah_petugas); ?></span>
                             </span>
@@ -46,7 +46,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info-cs res-mg-t-30 table-mg-t-pro-n">
                     <h3 class="box-title">User / Pengguna</h3>
                     <ul class="list-inline two-part-sp">
@@ -64,7 +64,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
                     <h3 class="box-title">Total Karyawan</h3>
@@ -84,7 +84,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
                     <h3 class="box-title">Kategori Arsip</h3>
                     <ul class="list-inline two-part-sp">
@@ -102,7 +102,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

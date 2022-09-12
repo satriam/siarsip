@@ -53,26 +53,26 @@
                     <?php 
                     include '../koneksi.php';
                     $no = 1;
-                    $user = mysqli_query($koneksi,"SELECT * FROM user ORDER BY user_id DESC");
+                    $user = mysqli_query($koneksi,"SELECT * FROM diri ORDER BY id DESC");
                     while($p = mysqli_fetch_array($user)){
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
                             <td>
                                 <?php 
-                                if($p['user_foto'] == ""){
+                                if($p['foto'] == ""){
                                     ?>
                                     <img class="img-user" src="../gambar/sistem/user.png">
                                     <?php
                                 }else{
                                     ?>
-                                    <img class="img-user" src="../gambar/user/<?php echo $p['user_foto']; ?>">
+                                    <img class="img-user" src="../gambar/user/<?php echo $p['foto']; ?>">
                                     <?php
                                 }
                                 ?>
                             </td>
-                            <td><?php echo $p['user_nama'] ?></td>
-                            <td><?php echo $p['user_username'] ?></td>
+                            <td><?php echo $p['nama'] ?></td>
+                            <td><?php echo $p['username'] ?></td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <a href="user_edit.php?id=<?php echo $p['user_id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>

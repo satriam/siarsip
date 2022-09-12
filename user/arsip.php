@@ -213,13 +213,18 @@
         <div class="panel panel">
           <div class="panel-heading">
             <h3 class="panel-title">Data Rekening</h3>
+             
           </div>
             <div class="panel-body">
+               <div class="pull-right">
+                <a href="tambah_rekening.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Rekening</a>
+            </div>
+          
                 <table id="table" class="table table-bordered table-striped table-hover">
                 <thead>
                    
                     <tr>
-                        <th >Bank</th>
+                        <th>Bank</th>
                         <th>NO Rekening</th>
                     </tr>
                 </thead>
