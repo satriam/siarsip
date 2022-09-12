@@ -8,6 +8,7 @@ $password = md5($_POST['password']);
 
 $login = mysqli_query($koneksi, "SELECT * FROM diri WHERE username='$username' AND password='$password'");
 $cek = mysqli_num_rows($login);
+// var_dump($cek);die;
 
 if($cek > 0){
 	session_start();
