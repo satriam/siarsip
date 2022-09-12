@@ -29,19 +29,28 @@
     <div class="panel-heading">
       <h3 class="panel-title">Data Karyawan</h3>
     </div>
-    <div class="panel-body">
-      <div class="pull-right">
-        <a href="dt_user.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
-      </div>
-      <br>
-      <br>
-
       <?php 
                     $id = $_GET['id'];              
                     $data = mysqli_query($koneksi, "select *from diri where id='$id'"); 
                     while($d = mysqli_fetch_array($data)){
                         ?>
-      <div class="col-lg-3"></div>
+    <div class="panel-body">
+      
+       <div class="col-md-2">
+              <?php 
+              if($d['foto'] == ""){
+              ?>
+              <img  src="../gambar/sistem/user.png">
+              <?php
+              }else{
+              ?>
+              <img src="../gambar/user/<?php echo $d['foto']; ?>">
+              <?php
+              }
+              ?>
+</div> 
+  
+      <div class="col-lg-10"></div>
       <div class="col-lg-6">
         <div class="card-body">
           <div class="row">
@@ -201,6 +210,9 @@
                     ?></p>
             </div>
           </div>
+          <div class="pull-right">
+        <a href="dt_user.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+      </div>
 
         </div>
       </div>
