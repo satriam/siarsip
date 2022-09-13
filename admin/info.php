@@ -77,7 +77,7 @@
                                     ?>
                                     <div class="btn-group">
                                         <a href="info_view.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-eye"></i></a>
-                                        <a href="info_edit.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
+                                        <a href="info_update.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
                                         <a href="info_hapus.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                                     </div>
                                     <?php

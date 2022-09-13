@@ -171,7 +171,7 @@
                                                             </div>
                                                            <ul class="notification-menu">
                                                             <?php 
-                                                                $kategori = mysqli_query($koneksi,"SELECT notif.tanggal,nama,aksi,file FROM notif inner join diri on notif.id_user=diri.id");
+                                                                $kategori = mysqli_query($koneksi,"SELECT notif.tanggal,nama,aksi,file FROM notif ORDER BY tanggal DESC");
                                                                 while($p = mysqli_fetch_array($kategori)){
                                                                     ?>
                                                                 <li>

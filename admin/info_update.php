@@ -41,21 +41,26 @@
                     <br>
                     <br>
 
-                    <form method="post" action="info_tambah_aksi.php" enctype="multipart/form-data">
-
+                    <form method="post" action="info_update_aksi.php" enctype="multipart/form-data">
+                            <?php 
+                    $id = $_GET['id'];              
+                    $data = mysqli_query($koneksi, "select * from info where id='$id'");
+                    while($d = mysqli_fetch_array($data)){
+                        ?>
+                            <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
                        <div class="form-group">
                                 <label>Judul</label>
-                                <input type="text" class="form-control"  name="judul" required="required" >
+                                <input type="text" class="form-control"  name="judul" value="<?php echo $d['judul']; ?>" required="required" >
                             </div>
 
                             <div class="form-group">
                                 <label>isi</label>
-                                <textarea class="form-control" rows="7" cols="70" name="isi" required="required"></textarea>
+                                <textarea class="form-control" rows="7" cols="70" name="isi" required="required"><?php echo $d['isi']; ?> </textarea>
                             </div>
 
                             <div class="form-group">
                             <label>tipe</label>
-                            <select name="tipe" class="form-control">
+                            <select name="tipe"class="form-control">
                                 <option disabled selected> Pilih </option>
                                 <option value="Seminar">Seminar</option>
                                 <option value="Rapat">Rapat</option>
@@ -83,6 +88,9 @@
                                 <input type="submit" class="btn btn-primary" value="Simpan">
                             </div>
                     </form>
+                    <?php
+                    }
+                    ?>
 
                 </div>
             </div>

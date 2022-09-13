@@ -36,54 +36,43 @@
                 <div class="panel-body">
 
                     <div class="pull-right">
-                        <a href="info.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+                        <a href="arsip.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
                     </div>
                     <br>
                     <br>
 
-                    <form method="post" action="info_tambah_aksi.php" enctype="multipart/form-data">
+                    <?php 
+                    $id = $_GET['id'];              
+                    $data = mysqli_query($koneksi, "select * from sertifikat where id='$id'");
+                    while($d = mysqli_fetch_array($data)){
+                        ?>
+
+                    <form method="post" action="sertif_edit_aksi.php" enctype="multipart/form-data">
+                        <div class="form-group">
+                                <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
+                            </div>
 
                        <div class="form-group">
-                                <label>Judul</label>
-                                <input type="text" class="form-control"  name="judul" required="required" >
+                                <label>Nama Sertifikat</label>
+                                <input type="text" class="form-control"  name="nama_sertif" value="<?php echo $d['nama_sertif']; ?>" required="required" >
                             </div>
 
-                            <div class="form-group">
-                                <label>isi</label>
-                                <textarea class="form-control" rows="7" cols="70" name="isi" required="required"></textarea>
-                            </div>
-
-                            <div class="form-group">
-                            <label>tipe</label>
-                            <select name="tipe" class="form-control">
-                                <option disabled selected> Pilih </option>
-                                <option value="Seminar">Seminar</option>
-                                <option value="Rapat">Rapat</option>
-                                <option value="Upacara">Upacara</option>
-                                <option value="Berita">Berita</option>
-                                <option value="Acara">Acara</option>
-                                <option value="Lainnya">Lainnya</option>
-                            </select>
-                        </div>
-
+                            
                         <div class="form-group">
                             <label>Foto</label>
-                            <input type="file" name="foto">
-                            <small>Kosongkan jika tidak ingin menambahkan foto.</small>
+                            <input type="file" name="foto" required="required">
+                            
                         </div>
 
-                        <div class="form-group">
-                                <label>Author</label>
-                                <input type="text" class="form-control"  name="author" value="<?php echo $_SESSION['nama'];?>" readonly >
-                                
-                            </div>
-    
+
                             <div class="form-group">
                                 <label></label>
                                 <input type="submit" class="btn btn-primary" value="Simpan">
                             </div>
                     </form>
-
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

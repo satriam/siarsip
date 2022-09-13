@@ -93,7 +93,7 @@
                                             <?php
                                             }else{
                                                 ?>
-                                            <img class="img img-responsive" src="../gambar/user/<?php echo $s['gambar']; ?>">
+                                            <img class="img img-responsive" src="../gambar/info/<?php echo $s['gambar']; ?>">
                                             <?php
                                             }
                                             ?>

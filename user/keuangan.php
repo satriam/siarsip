@@ -61,10 +61,13 @@
                     AND diri.id_lokasi=lokasi.id 
                     AND diri.id_jj=jenjang.id 
                     AND diri.id_status=status.id");
+                    
                     while($p = mysqli_fetch_array($kategori)){
+                       
                         ?>
                         <tr>
                             <td><?php echo $p['nip'] ?></td>
+                            
                             <td><?php echo $p['Nama_Lokasi'] ?></td>
                             <td><?php echo $p['status'] ?></td>
                             <td><?php echo $p['Nama_Jabatan'] ?></td>

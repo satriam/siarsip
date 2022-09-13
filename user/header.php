@@ -116,9 +116,46 @@
                                         </ul>
                                     </div>
                                 </div>
+
+                                
                                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                     <div class="header-right-info">
-                                        <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                        <ul class="nav navbar-nav main-top-nav header-right-menu">
+
+                                        <li class="nav-item">
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
+                                                        <div class="notification-single-top">
+                                                            <h1>Notification</h1>
+                                                            </div>
+                                                           <ul class="notification-menu">
+                                                            <?php 
+                                                                $kategori = mysqli_query($koneksi,"SELECT notif.tanggal,nama,aksi,file FROM notif ORDER BY tanggal DESC");
+                                                                while($p = mysqli_fetch_array($kategori)){
+                                                                    ?>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        
+                                                                        <div class="notification-content">
+                                                                           <p>
+                                                                            <small><i><?php echo date(' d-m-Y',strtotime($p['tanggal'])) ?></i></small>
+                                                                            <br>
+                                                                            <b><?php echo $p['nama'] ?> </b><?php echo $p['aksi'] ?> <b><?php echo $p['file'] ?></b>.
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                                <hr>
+                                                            </li>
+                                                            <?php 
+                                                        }
+                                                        ?>
+                                                    </ul>
+                                                    
+                                                    <div class="notification-view">
+                                                        <a href="#">Lihat semua riwayat</a>
+                                                    </div>
+                                                </div>
+                                            </li>
 
                                             <li class="nav-item">
                                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
