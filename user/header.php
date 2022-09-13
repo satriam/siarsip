@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
 
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 

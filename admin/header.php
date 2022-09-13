@@ -67,6 +67,10 @@
                             <a href="dt_user.php" aria-expanded="false"><span class="educate-icon educate-course icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data User</span></a>
                         </li>
 
+                        <li>
+                            <a href="info.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">info</span></a>
+                        </li>
+
 
                         <li class="nav-item has-submenu">
                         <a class="nav-link" href="#"aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non"> Petugas  </a>
@@ -98,6 +102,8 @@
                         <li>
                             <a href="status.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Status</span></a>
                         </li>
+			
+                        
 			
                         </ul>
                     </li>
@@ -161,13 +167,33 @@
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
-                                                            <h1>Riwayat unduh terakhir</h1>
-                                                        </div>
-                                                        <ul class="notification-menu">
-                                                           
+                                                            <h1>Notification</h1>
+                                                            </div>
+                                                           <ul class="notification-menu">
+                                                            <?php 
+                                                                $kategori = mysqli_query($koneksi,"SELECT notif.tanggal,nama,aksi,file FROM notif inner join diri on notif.id_user=diri.id");
+                                                                while($p = mysqli_fetch_array($kategori)){
+                                                                    ?>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        
+                                                                        <div class="notification-content">
+                                                                           <p>
+                                                                            <small><i><?php echo date(' d-m-Y',strtotime($p['tanggal'])) ?></i></small>
+                                                                            <br>
+                                                                            <b><?php echo $p['nama'] ?> </b><?php echo $p['aksi'] ?> <b><?php echo $p['file'] ?></b>.
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                                <hr>
+                                                            </li>
+                                                            <?php 
+                                                        }
+                                                        ?>
                                                     </ul>
+                                                    
                                                     <div class="notification-view">
-                                                        <a href="riwayat.php">Lihat semua riwayat</a>
+                                                        <a href="#">Lihat semua riwayat</a>
                                                     </div>
                                                 </div>
                                             </li>

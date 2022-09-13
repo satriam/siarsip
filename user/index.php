@@ -38,7 +38,7 @@
                                     <div id="sparklinedash3"></div>
                                 </li>
                                 <li class="text-right graph-three-ctn">
-                                    <i class="fa fa-level-up" aria-hidden="true"></i> 
+                                    <i class="fa fa-level-up" aria-hidden="true"></i>
                                     <span class="counter text-info">
                                         <?php 
                                         $jumlah_arsip = mysqli_query($koneksi,"select * from arsip");
@@ -57,7 +57,7 @@
                                     <div id="sparklinedash4"></div>
                                 </li>
                                 <li class="text-right graph-four-ctn">
-                                    <i class="fa fa-level-down" aria-hidden="true"></i> 
+                                    <i class="fa fa-level-down" aria-hidden="true"></i>
                                     <span class="text-danger">
                                         <?php 
                                         $jumlah_kategori = mysqli_query($koneksi,"select * from kategori");
@@ -71,23 +71,74 @@
                 </div>
 
                 <br>
-
                 <div class="product-sales-chart">
 
-                    <br>
-                    <br>
-                    <center>
-                        
-                        <h3>Selamat Datang</h3>
-                        <h4>Sistem Informasi Arsip Digital</h4>
+                    <div class="container">
+                        <div class="row">
+         <?php 
+                    include '../koneksi.php';
+                    $no = 1;
+                    $kategori = mysqli_query($koneksi,"SELECT * FROM info");
+                    while($s = mysqli_fetch_array($kategori)){
+                        ?>
+                            <div class="col-md-3">
+                                <!-- komponen panel di sini  -->
+                                <div class="panel panel-default" a href="info.php?id=<?php echo $s['id']; ?>">
+                                    
+                                    <div class="panel-heading post-thumb">
+                                       <?php 
+                                            if($s['gambar'] == ""){
+                                                ?>
+                                            <img class="img img-responsive" src="../gambar/sistem/user.png">
+                                            <?php
+                                            }else{
+                                                ?>
+                                            <img class="img img-responsive" src="../gambar/user/<?php echo $s['gambar']; ?>">
+                                            <?php
+                                            }
+                                            ?>
+                                    </div>
 
-                    </center>
-                    <br>
-                    <br>
-                    <br>
+                                    <div class="panel-body post-body">
+                                        <a class="label label-default" href="info.php?id=<?php echo $s['id']; ?>"><?php echo $s['tipe']; ?></a>
+                                        <h3 class="post-title">
+                                            <a href="#"><?php 
+                                             $judul = $s["judul"];
+                                             if (strlen($judul) > 60) {
+                                                    $judul = substr($judul, 0, 60) . "...";
+                                                }
+                                            echo $judul; ?></a>
+                                        </h3>
+                                        <p>
+                                            <?php 
+                                            $deskripsi = $s["isi"];
+                                            if (strlen($deskripsi) > 100) {
+                                                $deskripsi = substr($deskripsi, 0, 100) . "...";
+                                            }
+                                            echo $deskripsi; ?>
+                                        </p>
+                                        <hr>
+                                        <div class="post-author">
+                                            <p><?php echo $s['author']; ?> <?php echo $s['tanggal']; ?></p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                             <?php 
+                    }
+                    ?>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
+
+
+
+
+
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 
@@ -107,18 +158,19 @@
                         <?php 
                         if($s['foto'] == ""){
                             ?>
-                            <img class="img-user" src="../gambar/sistem/user.png">
-                            <?php
+                        <img class="img-user" src="../gambar/sistem/user.png">
+                        <?php
                         }else{
                             ?>
-                            <img class="img-user" src="../gambar/user/<?php echo $s['foto']; ?>">
-                            <?php
+                        <img class="img-user" src="../gambar/user/<?php echo $s['foto']; ?>">
+                        <?php
                         }
                         ?>
 
                         <h4><a class="cards-hd-dn" href="#"><?php echo $s['nama']; ?></a></h4>
                         <h5>user</h5>
-                        <p class="ctn-cards">Pengelolaan arsip jadi lebih mudah dengan sistem informasi arsip digital.</p>
+                        <p class="ctn-cards">Pengelolaan arsip jadi lebih mudah dengan sistem informasi arsip digital.
+                        </p>
                     </div>
                 </div>
 
