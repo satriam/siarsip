@@ -60,7 +60,7 @@
                             
                         <div class="form-group">
                             <label>Foto</label>
-                            <input type="file" name="foto" required="required">
+                            <input type="file" name="foto" >
                             
                         </div>
 
