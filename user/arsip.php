@@ -252,12 +252,12 @@
 <div class="container-fluid">
   <div class="panel panel">
     <div class="panel-heading">
-      <h3 class="panel-title">Data Rekening</h3>
+      <h3 class="panel-title">Data Sertifikat</h3>
     </div>
 
     <div class="panel-body">
       <div class="pull-right">
-        <a href="sertif_tambah.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Rekening</a>
+        <a href="sertif_tambah.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Sertifikat</a>
         <br><br>
       </div>
 

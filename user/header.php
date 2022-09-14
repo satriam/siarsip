@@ -69,10 +69,7 @@
                             <a href="keuangan.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Status Karyawan</span></a>
                         </li>
 
-                        <li>
-                            <a href="sertif.php" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Sertifikat</span></a>
-                        </li>
-
+                       
 
                         <li>
                             <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-danger icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Password</span></a>
