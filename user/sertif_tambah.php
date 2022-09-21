@@ -40,10 +40,17 @@
                     </div>
                     <br>
                     <br>
-
+                     <?php 
+                    
+                     $id = $_SESSION['id'];
+                    $kategori = mysqli_query($koneksi,"SELECT nama FROM diri where diri.id='$id'");
+                     while($p = mysqli_fetch_array($kategori)){
+                       
+                        ?>
                     <form method="post" action="sertif_tambah_aksi.php" enctype="multipart/form-data">
                         <div class="form-group">
                                 <input type="hidden" class="form-control"  name="id_diri" value="<?php echo $_SESSION['id'];?>"  >
+                                <input type="hidden" class="form-control"  name="nama" value="<?php echo $p['nama'];?>"  >
                             </div>
 
                        <div class="form-group">
@@ -72,6 +79,9 @@
 
 
 </div>
+<?php
+                     }
+                     ?>
 
 
 <?php include 'footer.php'; ?>

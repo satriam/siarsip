@@ -7,6 +7,8 @@ $tipe  = $_POST['tipe'];
 // $foto  = $_POST['foto'];
 $author  = $_POST['author'];
 $tanggal = date("Y-m-d");
+$tanggal_acara=$_POST['tanggal_acara'];
+$lokasi=$_POST['lokasi'];
 
 
 $rand = rand();
@@ -17,12 +19,12 @@ $filename = $_FILES['foto']['name'];
 
 if( $filename == "" && $tipe == ""){
 
-	mysqli_query($koneksi, "update info set judul='$judul', isi='$isi' where id='$id'")or die(mysqli_error($koneksi));
+	mysqli_query($koneksi, "update info set judul='$judul', isi='$isi',tanggal_acara='$tanggal_acara',lokasi='$lokasi' where id='$id'")or die(mysqli_error($koneksi));
 	header("location:info.php");
 
 }else if($filename == ""){
 
-	mysqli_query($koneksi, "update info set judul='$judul', tipe='$tipe', isi='$isi' where id='$id'")or die(mysqli_error($koneksi));
+	mysqli_query($koneksi, "update info set judul='$judul', tipe='$tipe', isi='$isi',tanggal_acara='$tanggal_acara',lokasi='$lokasi' where id='$id'")or die(mysqli_error($koneksi));
 	header("location:info.php");
 }else if($tipe == ""){
 
@@ -40,7 +42,7 @@ if( $filename == "" && $tipe == ""){
 		// upload file baru
 		move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/info/'.$rand.'_'.$filename);
 		$nama_file = $rand.'_'.$filename;
-		mysqli_query($koneksi, "update info set judul='$judul',gambar='$nama_file', isi='$isi' where id='$id'")or die(mysqli_error($koneksi));
+		mysqli_query($koneksi, "update info set judul='$judul',gambar='$nama_file', isi='$isi',tanggal_acara='$tanggal_acara',lokasi='$lokasi' where id='$id'")or die(mysqli_error($koneksi));
 		header("location:info.php?alert=sukses");
 
 	}else{
@@ -62,7 +64,7 @@ if( $filename == "" && $tipe == ""){
 		// upload file baru
 		move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/info/'.$rand.'_'.$filename);
 		$nama_file = $rand.'_'.$filename;
-		mysqli_query($koneksi, "update info set judul='$judul',gambar='$nama_file', tipe='$tipe', isi='$isi' where id='$id'")or die(mysqli_error($koneksi));
+		mysqli_query($koneksi, "update info set judul='$judul',gambar='$nama_file', tipe='$tipe', isi='$isi',tanggal_acara='$tanggal_acara',lokasi='$lokasi' where id='$id'")or die(mysqli_error($koneksi));
 		header("location:info.php?alert=sukses");
 
 	}else{

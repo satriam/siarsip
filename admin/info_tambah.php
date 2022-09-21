@@ -52,6 +52,14 @@
                                 <label>isi</label>
                                 <textarea class="form-control" rows="7" cols="70" name="isi" required="required"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label>Tanggal Acara</label></label>
+                                <input type="date" class="form-control"  name="tanggal_acara" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>Lokasi Acara</label>
+                                <input type="text" class="form-control"  name="lokasi" required="required"></input>
+                            </div>
 
                             <div class="form-group">
                             <label>tipe</label>

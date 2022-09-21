@@ -40,7 +40,7 @@
             <br>
             <br>
             <br>
-            <table id="table" class="table table-bordered table-striped table-hover table-datatable">
+            <table class="table table-bordered table-striped table-hover table-datatable">
                 <thead>
                     <tr>
                         <th width="1%">No</th>
@@ -70,14 +70,14 @@
                             <td><?php echo $p['nip'] ?></td>
                             <td><?php echo $p['telpon1'] ?></td>
                             <td><?php echo $p['serata'] ?></td>
-                            <td class="text-center">
+                            <td width="11%">
                                 <?php 
                                 if($p['id'] != 0){
                                     ?>
                                     <div class="btn-group">
-                                        <a href="dt_user_view.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-eye"></i></a>
-                                        <a href="dt_user_edit.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
-                                        <a href="dt_user_hapus.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                                        <a href="dt_user_view.php?id=<?php echo $p['id']; ?>" class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                        <a href="dt_user_edit.php?id=<?php echo $p['id']; ?>" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
+                                        <a href="#" onClick="confirm_modal('dt_user_hapus.php?&id=<?php echo  $p['id']; ?>');" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </div>
                                     <?php
                                 }
@@ -90,11 +90,38 @@
                 </tbody>
             </table>
 
+            <!-- Modal Popup untuk delete-->
+<div class="modal fade" id="modal_delete">
+  <div class="modal-dialog">
+    <div class="modal-content" style="margin-top:100px;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" style="text-align:center;">Anda yakin akan menghapus data ini.. ?</h4>
+      </div>
+                
+      <div class="modal-footer"  style="text-align:center;" >
+        <button type="button"class="btn btn-danger btn-sm" ><a href="#"  id="delete_link">Hapus</a></button>
+        <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Javascript untuk popup modal Delete-->
+<script type="text/javascript">
+    function confirm_modal(delete_url)
+    {
+      $('#modal_delete').modal('show', {backdrop: 'static'});
+      document.getElementById('delete_link').setAttribute('href' , delete_url);
+    }
+</script>  
+
 
         </div>
 
     </div>
 </div>
+
 
 
 <?php include 'footer.php'; ?>

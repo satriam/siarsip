@@ -40,19 +40,34 @@
             <br>
             <br>
             <br>
-            <table id="table" class="table table-bordered table-striped table-hover table-datatable">
+              
+
+            <table class="table table-bordered table-striped table-hover table-datatable">
                 <thead>
                     <tr>
                         <th width="1%">No</th>
                         <th>judul</th>
                         <th>isi</th>
                         <th>tipe</th>
-                        <th>tanggal</th>
+                        <th>tanggal publish</th>
                         <th>author</th>
                         <th class="text-center" width="10%">OPSI</th>
                     </tr>
                 </thead>
                 <tbody>
+                     
+
+                        <?php
+                        // koneksi
+                        include '../koneksi.php';
+                        $lama = 0; // lama data yang tersimpan di database dan akan otomatis terhapus setelah 5 hari
+                        
+                        // proses untuk melakukan penghapusan data
+                        
+                        $query = "DELETE FROM info
+                                WHERE DATEDIFF(CURDATE(), tanggal) > $lama";
+                        $hasil = mysqli_query($koneksi,$query);
+                        ?>
                     <?php 
                     include '../koneksi.php';
                     $no = 1;
@@ -69,7 +84,7 @@
                                                 }
                                             echo $isi; ?></a></td>
                             <td><?php echo $p['tipe'] ?></td>
-                            <td><?php echo $p['tanggal'] ?></td>
+                            <td><?php echo $p['created_at'] ?></td>
                             <td><?php echo $p['author'] ?></td>
                             <td class="text-center">
                                 <?php 
@@ -90,7 +105,7 @@
                     ?>
                 </tbody>
             </table>
-
+                          
 
         </div>
 

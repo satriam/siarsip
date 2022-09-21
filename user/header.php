@@ -131,7 +131,7 @@
                                                             </div>
                                                            <ul class="notification-menu">
                                                             <?php 
-                                                                $kategori = mysqli_query($koneksi,"SELECT notif.tanggal,nama,aksi,file FROM notif ORDER BY tanggal DESC");
+                                                                $kategori = mysqli_query($koneksi,"SELECT created_at,nama,aksi,file,target FROM notif where target='user' ORDER BY created_at DESC");
                                                                 while($p = mysqli_fetch_array($kategori)){
                                                                     ?>
                                                                 <li>
@@ -139,7 +139,7 @@
                                                                         
                                                                         <div class="notification-content">
                                                                            <p>
-                                                                            <small><i><?php echo date(' d-m-Y',strtotime($p['tanggal'])) ?></i></small>
+                                                                            <small><i><?php echo date(' d-m-Y',strtotime($p['created_at'])) ?></i></small>
                                                                             <br>
                                                                             <b><?php echo $p['nama'] ?> </b><?php echo $p['aksi'] ?> <b><?php echo $p['file'] ?></b>.
                                                                         </p>

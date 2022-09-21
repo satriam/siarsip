@@ -58,6 +58,15 @@
                                 <textarea class="form-control" rows="7" cols="70" name="isi" required="required"><?php echo $d['isi']; ?> </textarea>
                             </div>
 
+                             <div class="form-group">
+                                <label>Tanggal Acara</label></label>
+                                <input type="date" class="form-control"  name="tanggal_acara"value="<?php echo $d['tanggal_acara']; ?>" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>Lokasi Acara</label>
+                                <input type="text" class="form-control"  name="lokasi" value="<?php echo $d['lokasi']; ?>"required="required"></input>
+                            </div>
+
                             <div class="form-group">
                             <label>tipe</label>
                             <select name="tipe"class="form-control">

@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../assets/css/responsive.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css"> -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
@@ -68,6 +68,7 @@
                         </li>
 
                         <li>
+                            
                             <a href="info.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">info</span></a>
                         </li>
 
@@ -101,6 +102,10 @@
 
                         <li>
                             <a href="status.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Status</span></a>
+                        </li>
+			
+                        <li>
+                            <a href="rekening_karyawan.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Rekening</span></a>
                         </li>
 			
                         
@@ -171,7 +176,7 @@
                                                             </div>
                                                            <ul class="notification-menu">
                                                             <?php 
-                                                                $kategori = mysqli_query($koneksi,"SELECT notif.tanggal,nama,aksi,file FROM notif ORDER BY tanggal DESC");
+                                                                $kategori = mysqli_query($koneksi,"SELECT created_at,nama,aksi,file,target FROM notif where target='admin' ORDER BY created_at DESC");
                                                                 while($p = mysqli_fetch_array($kategori)){
                                                                     ?>
                                                                 <li>
@@ -179,7 +184,7 @@
                                                                         
                                                                         <div class="notification-content">
                                                                            <p>
-                                                                            <small><i><?php echo date(' d-m-Y',strtotime($p['tanggal'])) ?></i></small>
+                                                                            <small><i><?php echo date(' d-m-Y',strtotime($p['created_at'])) ?></i></small>
                                                                             <br>
                                                                             <b><?php echo $p['nama'] ?> </b><?php echo $p['aksi'] ?> <b><?php echo $p['file'] ?></b>.
                                                                         </p>

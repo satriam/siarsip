@@ -73,17 +73,17 @@
                 <br>
                 <div class="product-sales-chart">
 
-                    <div class="container">
-                        <div class="row">
+                    <div class="container-fluid">
+                        <div class="row col-lg-12">
          <?php 
                     include '../koneksi.php';
                     $no = 1;
                     $kategori = mysqli_query($koneksi,"SELECT * FROM info");
                     while($s = mysqli_fetch_array($kategori)){
                         ?>
-                            <div class="col-md-3">
+                            <div class="col-lg-4">
                                 <!-- komponen panel di sini  -->
-                                <div class="panel panel-default" a href="info.php?id=<?php echo $s['id']; ?>">
+                                <div class="panel panel-default" >
                                     
                                     <div class="panel-heading post-thumb">
                                        <?php 
@@ -102,7 +102,7 @@
                                     <div class="panel-body post-body">
                                         <a class="label label-default" href="info.php?id=<?php echo $s['id']; ?>"><?php echo $s['tipe']; ?></a>
                                         <h3 class="post-title">
-                                            <a href="#"><?php 
+                                            <a href="info.php?id=<?php echo $s['id']; ?>"><?php 
                                              $judul = $s["judul"];
                                              if (strlen($judul) > 60) {
                                                     $judul = substr($judul, 0, 60) . "...";
@@ -112,28 +112,33 @@
                                         <p>
                                             <?php 
                                             $deskripsi = $s["isi"];
-                                            if (strlen($deskripsi) > 100) {
+                                            if (strlen($deskripsi) > 25) {
                                                 $deskripsi = substr($deskripsi, 0, 100) . "...";
                                             }
                                             echo $deskripsi; ?>
                                         </p>
                                         <hr>
                                         <div class="post-author">
-                                            <p><?php echo $s['author']; ?> <?php echo $s['tanggal']; ?></p>
+                                            <p><?php echo $s['author']; ?> <?php echo $s['created_at']; ?></p>
                                         </div>
                                         
                                     </div>
-                                </div>
-                            </div>
-                             <?php 
+                                    
+                                        </div>
+                                        
+                                        </div>
+                          
+                           <?php 
                     }
                     ?>
-                        </div>
                     </div>
-
-
+                    
                 </div>
-            </div>
+                
+                </div>
+                </div>
+                   
+          
 
 
 

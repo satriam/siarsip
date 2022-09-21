@@ -217,7 +217,7 @@
 
     <div class="panel-body">
       <div class="pull-right">
-        <a href="tambah_rekening.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Rekening</a>
+        <!-- <a href="tambah_rekening.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Rekening</a> -->
         <br><br>
       </div>
       

@@ -1,7 +1,7 @@
 <?php 
 include '../koneksi.php'; 
 $nama  = $_POST['nama'];
-$password = md5($_POST['nama']);
+$password = md5($_POST['nip']);
 $tempat = $_POST['tempat_lahir'];
 $tanggal = $_POST['tanggal_lahir'];
 $goldar = $_POST['goldar'];
@@ -24,8 +24,17 @@ $id_jj = $_POST['id_jj'];
 $nakes = $_POST['nakes'];
 $jenis_jabatan= $_POST['jenis_jabatan'];
 
-$data=mysqli_query($koneksi, "insert into diri values (NULL,'$nama','$password','$nama','$tempat','$tanggal','$goldar','$nik','$status','$alamat'
+ $cek = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM diri WHERE nip='$nip' "));
+ 
+    if ($cek > 0){
+    echo "<script>window.alert('NIP yang anda masukan sudah ada')
+    window.location='dt_user_tambah.php'</script>";
+    }else {
+
+$data=mysqli_query($koneksi, "insert into diri values (NULL,'$nip','$password','$nama','$tempat','$tanggal','$goldar','$nik','$status','$alamat'
 ,'$email','$npwp','$nip','$telpon1','$telpon2','$bpjs','$serata','$jurusan','$univ','$id_lokasi','$id_status','$id_jabatan','$id_jj','$nakes','$jenis_jabatan','')");
 
+    echo "<script>window.alert('Berhasil Menambahkan Data')
+    window.location='dt_user.php'</script>";
 
-header("location:dt_user.php");
+    }

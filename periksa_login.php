@@ -10,6 +10,8 @@ $password = md5($_POST['password']);
 // if($akses == "admin"){
 
 	$login = mysqli_query($koneksi, "SELECT * FROM admin WHERE admin_username='$username' AND admin_password='$password'");
+	
+
 	$cek = mysqli_num_rows($login);
 	
 
@@ -22,6 +24,8 @@ $password = md5($_POST['password']);
 		$_SESSION['status'] = "admin_login";
 
 		header("location:admin/");
+		
+                
 	}else{
 		header("location:login.php?alert=gagal");
 	}
