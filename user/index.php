@@ -1,4 +1,19 @@
 <?php include 'header.php'; ?>
+<?php
+    //Simpan Data Statistik Website
+    $ip      = $_SERVER['REMOTE_ADDR']; // Mendapatkan IP komputer user
+    $tanggal = date("Ymd"); // Mendapatkan tanggal sekarang
+    $waktu   = time(); // 
+    // Mencek berdasarkan IPnya, apakah user sudah pernah mengakses hari ini 
+    $s = mysqli_query($koneksi,"SELECT * FROM tstatistika WHERE ip='$ip' AND tanggal='$tanggal'");
+    // Kalau belum ada, simpan data user tersebut ke database
+    if(mysqli_num_rows($s) == 0){
+    mysqli_query($koneksi,"INSERT INTO tstatistika (ip, tanggal, hits, online) VALUES('$ip','$tanggal','1','$waktu')");
+    } 
+    else{
+    mysqli_query($koneksi,"UPDATE tstatistika SET hits=hits+1, online='$waktu' WHERE ip='$ip' AND tanggal='$tanggal'");
+    }
+?>
 
 <div class="breadcome-area">
     <div class="container-fluid">

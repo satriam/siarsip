@@ -46,25 +46,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info-cs res-mg-t-30 table-mg-t-pro-n">
-                    <h3 class="box-title">User / Pengguna</h3>
-                    <ul class="list-inline two-part-sp">
-                        <li>
-                            <div id="sparklinedash2"></div>
-                        </li>
-                        <li class="text-right graph-two-ctn">
-                            <i class="fa fa-level-up" aria-hidden="true"></i> 
-                            <span class="counter text-purple">
-                                <?php 
-                                $jumlah_user = mysqli_query($koneksi,"select * from user");
-                                ?>
-                                <span class="counter"><?php echo mysqli_num_rows($jumlah_user); ?></span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div> -->
+           
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
                     <h3 class="box-title">Total Karyawan</h3>
@@ -84,9 +66,41 @@
                     </ul>
                 </div>
             </div>
-            <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+       
+
+
+
+                    <?php
+ // skrip koneksi database
+ mysql_connect("localhost","root","");
+ mysql_select_db("siarsip");
+ 
+ $ip      = $_SERVER['REMOTE_ADDR']; // Mendapatkan IP komputer user
+ $tanggal = date("Ymd"); // Mendapatkan tanggal sekarang
+ $waktu   = time(); //
+  
+ // Mencek berdasarkan IPnya, apakah user sudah pernah mengakses hari ini
+ $s = mysql_query("SELECT * FROM tstatistika WHERE ip='$ip' AND tanggal='$tanggal'");
+ 
+ // Kalau belum ada, simpan data user tersebut ke database
+ if(mysql_num_rows($s) == 0){
+     mysql_query("INSERT INTO tstatistika(ip, tanggal, hits, online) VALUES('$ip','$tanggal','1','$waktu')");
+ }
+ // Jika sudah ada, update
+ else{
+     mysql_query("UPDATE tstatistika SET hits=hits+1, online='$waktu' WHERE ip='$ip' AND tanggal='$tanggal'");
+ }
+ 
+ $pengunjung       = mysql_num_rows(mysql_query("SELECT * FROM tstatistika WHERE tanggal='$tanggal' GROUP BY ip")); // Hitung jumlah pengunjung
+ $totalpengunjung  = mysql_result(mysql_query("SELECT COUNT(hits) FROM tstatistika"), 0); // hitung total pengunjung
+ $bataswaktu       = time() - 300;
+ $pengunjungonline = mysql_num_rows(mysql_query("SELECT * FROM tstatistika WHERE online > '$bataswaktu'")); // hitung pengunjung online
+ ?> 
+ 
+
+     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
-                    <h3 class="box-title">Kategori Arsip</h3>
+                    <h3 class="box-title">Pengunjung Hari ini</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash4"></div>
@@ -94,18 +108,21 @@
                         <li class="text-right graph-four-ctn">
                             <i class="fa fa-level-down" aria-hidden="true"></i> 
                             <span class="text-danger">
-                                <?php 
-                                $jumlah_kategori = mysqli_query($koneksi,"select * from diri");
-                                ?>
-                                <span class="counter"><?php echo mysqli_num_rows($jumlah_kategori); ?></span>
+                               
+                                <span class="counter"><?php echo $pengunjung; ?> </span>
                             </span>
                         </li>
                     </ul>
                 </div>
-            </div> -->
+            </div> 
         </div>
     </div>
 </div>
+    
+
+
+
+
 
 
 
@@ -130,11 +147,10 @@
                     </div>
                     <ul class="list-inline cus-product-sl-rp">
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>Jumlah Unduhan</h5>
+                            <h5><i class="fa fa-circle" style="color: #006DF0;"><?php echo $totalpengunjung; ?></i>Jumlah Unduhan</h5>
                         </li>
                     </ul>
                     <div id="extra-area-chart" style="height: 356px;"></div>
-
 
                     <div id="morris-area-chart"></div>
                 </div>
