@@ -44,8 +44,8 @@
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
 
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <!-- <div class="row"> -->
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
                             <h3 class="box-title">Total Arsip</h3>
                             <ul class="list-inline two-part-sp">
@@ -83,12 +83,14 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <br>
+        
                 <div class="product-sales-chart">
 
                     <div class="container-fluid">
+
+                    <h1 class="text-center" ><u> Berita Acara </u></h1>
                         <div class="row col-lg-12">
          <?php 
                     include '../koneksi.php';

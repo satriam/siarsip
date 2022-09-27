@@ -67,8 +67,9 @@
                 </thead>
                 <tbody>
                     <?php 
-                    $id = $_SESSION['id'];
-                $kategori = mysqli_query($koneksi,"select * from pks INNER JOIN diri ON pks.id_diri = diri.id;");
+                   
+                $kategori = mysqli_query($koneksi,"select pks.id,diri.nama,pks.akhir_pks,pks.mulai1,pks.mulai2,pks.mulai3,pks.mulai4,pks.akhir1,pks.akhir2,pks.akhir3,pks.akhir4 from pks INNER JOIN diri ON pks.id_diri = diri.id;");
+                // $kategori = mysqli_query($koneksi,"select * from pks ,diri ORDER BY id DESC ");
                     while($p = mysqli_fetch_array($kategori)){
                         ?>
                         <tr>
@@ -104,7 +105,7 @@
                                     ?>
                                     <div class="btn-group">
                                         
-                                        <a href="lokasi_edit.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
+                                        <a href="pks_update.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
                                         <a href="lokasi_hapus.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                                     </div>
                                     <?php

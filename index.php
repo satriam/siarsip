@@ -13,6 +13,7 @@
             <br><br><br><br><br><br><br>
           <h1 class="display-xs-3 ">SISTEM INFORMASI KEPEGAWAIAN  </h1>            
           <p class="display-xs-3">PT.BAM</p>
+          
           <hr class="my-4">
           <strong>Selamat Datang diWeb PT.BAM</strong>
           <br>

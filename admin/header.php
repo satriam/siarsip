@@ -107,6 +107,11 @@
                         <li>
                             <a href="rekening_karyawan.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Rekening</span></a>
                         </li>
+                        <li>
+                            <a href="pks.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">PKS</span></a>
+                        </li>
+                       
+                        
 			
                         
 			
