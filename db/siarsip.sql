@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2022 at 04:55 AM
+-- Generation Time: Sep 26, 2022 at 10:16 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -73,16 +73,46 @@ CREATE TABLE `diri` (
   `id_jj` int(11) NOT NULL,
   `nakes` varchar(30) NOT NULL,
   `jenis_jabatan` varchar(30) NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `foto` varchar(100) NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `diri`
 --
 
-INSERT INTO `diri` (`id`, `username`, `password`, `nama`, `tempat_lahir`, `tanggal_lahir`, `goldar`, `nik`, `status_kawin`, `alamat`, `email`, `npwp`, `nip`, `telpon1`, `telpon2`, `bpjs`, `serata`, `jurusan`, `univ`, `id_lokasi`, `id_status`, `id_jabatan`, `id_jj`, `nakes`, `jenis_jabatan`, `foto`) VALUES
-(7, 'user1', '03aa1a0b0375b0461c1b8f35b234e67a', 'Brio satya', 'tanjung enim', '1980-09-21', 'B', '2342424', 'belum kawin', 'dsffsffds', 'satriabae43@gmail.com', 'jhgjhsgfhjsgfjh', '234242', '832487928347', '8768347682764', '23424242', 'D3', 'asdjahgsdj', 'jshfjhsjfhkjf', 1, 101, 'BAM100000I', 1, 'non nakes', 'Struktural', '29748__MG_3546 copy.jpg'),
-(8, 'user2', '7e58d63b60197ceb55a1c487989a3720', 'Brio satya', 'a', '0000-00-00', 'B', '2342424', 'belum kawin', 'dsffsffds', 'satriabae43@gmail.com', 'jhgjhsgfhjsgfjh', '234242', '832487928347', '8768347682764', '23424242', 'D3', 'asdjahgsdj', 'jshfjhsjfhkjf', 1, 101, 'BAM100000I', 1, 'non nakes', 'Struktural', '');
+INSERT INTO `diri` (`id`, `username`, `password`, `nama`, `tempat_lahir`, `tanggal_lahir`, `goldar`, `nik`, `status_kawin`, `alamat`, `email`, `npwp`, `nip`, `telpon1`, `telpon2`, `bpjs`, `serata`, `jurusan`, `univ`, `id_lokasi`, `id_status`, `id_jabatan`, `id_jj`, `nakes`, `jenis_jabatan`, `foto`, `status`) VALUES
+(7, 'user1', '03aa1a0b0375b0461c1b8f35b234e67a', 'Brio satya', 'tanjung enim', '1980-09-21', 'B', '2342424', 'belum kawin', 'dsffsffds', 'satriabae43@gmail.com', 'jhgjhsgfhjsgfjh', '234242', '832487928347', '8768347682764', '23424242', 'D3', 'asdjahgsdj', 'jshfjhsjfhkjf', 2, 101, 'BAM100000I', 1, 'non nakes', 'Struktural', '29748__MG_3546 copy.jpg', 1),
+(8, '5190411232', 'e84b59bfbb38b15c14dbc2797a8774f0', 'satria mulya adiwardana', 'tanjung enim', '2001-11-09', 'O', '6728246237882', 'belum kawin', 'tanjung enim', 'satriabae43@gmail.com', '71297396782176', '5190411232', '832487928347', '8768347682764', '752347265772', 'S1', 'informatika', 'UniversitasTeknologi Yogyakarta', 7, 101, 'BAM142100I', 9, 'nakes', 'Fungsional', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `info`
+--
+
+CREATE TABLE `info` (
+  `id` int(11) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `isi` text NOT NULL,
+  `gambar` varchar(50) DEFAULT NULL,
+  `tipe` varchar(40) NOT NULL,
+  `created_at` date NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `tanggal_acara` date NOT NULL,
+  `lokasi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `info`
+--
+
+INSERT INTO `info` (`id`, `judul`, `isi`, `gambar`, `tipe`, `created_at`, `author`, `tanggal_acara`, `lokasi`) VALUES
+(2, 'blablabla', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint mollitia repellendus assumenda? Assumenda sunt animi ex beatae velit, tempore nihil atque autem cum natus expedita aspernatur harum distinctio corporis.     ', '15280_20200423-EN-BSOD_C0ffee_short-1536x864.png', 'Seminar', '2022-09-20', 'satria', '2022-09-23', 'Online'),
+(4, 'jashdkha', 'kjashdkjas', NULL, 'Seminar', '2022-09-20', 'Administrator', '0000-00-00', ''),
+(5, 'jashdkha', 'kjashdkjas', NULL, 'Seminar', '2022-09-20', 'Administrator', '0000-00-00', ''),
+(6, 'testing', 'testing', '6991_batubara.jpg', 'Seminar', '2022-09-20', 'Administrator', '2022-12-31', 'Online'),
+(7, 'blablabalba', 'loremkhdfkjshkfjhsdkfjhskjfhksdjfhskdjfgksdjfkjdsgfkjdsfkjg', NULL, 'hjsgdjfhsjdfhg', '2022-09-20', 'kjdshfkjsdhf', '2022-09-29', 'sdfhjgksdjfgksdjgfksdf');
 
 -- --------------------------------------------------------
 
@@ -166,9 +196,7 @@ CREATE TABLE `lokasi` (
 --
 
 INSERT INTO `lokasi` (`id`, `Nama_Lokasi`) VALUES
-(1, 'HO'),
 (2, 'RS BAM'),
-(3, 'KLINIK SBS'),
 (4, 'KLINIK BUKIT ASAM'),
 (5, 'KLINIK SR PULAU'),
 (6, 'KLINIK TJ LALANG'),
@@ -178,6 +206,31 @@ INSERT INTO `lokasi` (`id`, `Nama_Lokasi`) VALUES
 (10, 'KLINIK HBAP'),
 (11, 'KLINIK OMBILIN'),
 (12, 'KLINIK DERTI');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notif`
+--
+
+CREATE TABLE `notif` (
+  `id` int(11) NOT NULL,
+  `aksi` varchar(50) NOT NULL,
+  `created_at` date NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `file` varchar(50) NOT NULL,
+  `target` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notif`
+--
+
+INSERT INTO `notif` (`id`, `aksi`, `created_at`, `nama`, `file`, `target`) VALUES
+(2, 'Memposting', '2022-09-20', 'Administrator', 'informasi Seminar', 'user'),
+(3, 'blablabla', '2022-09-20', 'satt', 'informasi', 'admin'),
+(4, 'Upload', '2022-09-20', 'Brio satya', '', 'admin'),
+(5, 'Memposting', '2022-09-20', 'Administrator', 'informasi Seminar', 'user');
 
 -- --------------------------------------------------------
 
@@ -204,7 +257,9 @@ CREATE TABLE `pks` (
 --
 
 INSERT INTO `pks` (`id`, `id_diri`, `mulai1`, `mulai2`, `mulai3`, `mulai4`, `akhir1`, `akhir2`, `akhir3`, `akhir4`, `akhir_pks`) VALUES
-(1, 7, '2018-03-05', '2019-08-09', '2020-08-09', '2021-08-09', '2019-08-08', '2020-08-08', '2021-08-08', '2022-08-08', '2029-09-09');
+(1, 7, '2020-12-31', '2022-12-30', '2021-12-29', '2021-12-29', '2021-12-29', '2021-12-30', '2022-12-29', '2021-12-30', '2016-12-31'),
+(2, 0, '2019-09-30', '2021-11-29', '2021-11-30', '2021-11-30', '2017-10-30', '2021-10-29', '2022-11-30', '2022-11-30', '2015-12-30'),
+(3, 7, '2020-12-31', '2022-12-30', '2021-12-29', '2021-12-29', '2021-12-29', '2021-12-30', '2022-12-29', '2021-12-31', '2016-12-31');
 
 -- --------------------------------------------------------
 
@@ -224,7 +279,34 @@ CREATE TABLE `rekening` (
 --
 
 INSERT INTO `rekening` (`id`, `id_diri`, `Bank`, `Rekening`) VALUES
-(1, 7, 'Mandiri', 5762354);
+(1, 7, 'Mandiri', 5762354),
+(3, 7, 'Mandiri', 2147483647),
+(4, 7, 'Mandiri', 654321),
+(5, 8, 'BCA', 2147483647),
+(6, 8, 'BRI', 2147483647);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sertifikat`
+--
+
+CREATE TABLE `sertifikat` (
+  `id` int(11) NOT NULL,
+  `nama_sertif` varchar(100) NOT NULL,
+  `gambar` varchar(50) NOT NULL,
+  `id_diri` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sertifikat`
+--
+
+INSERT INTO `sertifikat` (`id`, `nama_sertif`, `gambar`, `id_diri`) VALUES
+(1, 'asdsd', '24918_20200423-EN-BSOD_C0ffee_short-1536x864.png', 0),
+(2, 'ygfhg', '16068_20200423-EN-BSOD_C0ffee_short-1536x864.png', 7),
+(3, 'kakakaka', '14534_batubara.jpg', 8),
+(4, 'Brio satya', '25431_20200423-EN-BSOD_C0ffee_short-1536x864.png', 7);
 
 -- --------------------------------------------------------
 
@@ -247,6 +329,28 @@ INSERT INTO `status` (`id`, `status`) VALUES
 (103, 'PKWT'),
 (104, 'MITRA'),
 (105, 'VENDOR');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tstatistika`
+--
+
+CREATE TABLE `tstatistika` (
+  `id` int(11) NOT NULL,
+  `ip` varchar(20) NOT NULL,
+  `tanggal` date NOT NULL,
+  `hits` int(11) NOT NULL,
+  `online` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tstatistika`
+--
+
+INSERT INTO `tstatistika` (`id`, `ip`, `tanggal`, `hits`, `online`) VALUES
+(1, '::1', '2022-09-21', 13, '1663734784'),
+(2, '::1', '2022-09-24', 11, '1664024088');
 
 -- --------------------------------------------------------
 
@@ -292,6 +396,12 @@ ALTER TABLE `diri`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `info`
+--
+ALTER TABLE `info`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jabatan`
 --
 ALTER TABLE `jabatan`
@@ -310,6 +420,12 @@ ALTER TABLE `lokasi`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `notif`
+--
+ALTER TABLE `notif`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pks`
 --
 ALTER TABLE `pks`
@@ -322,9 +438,21 @@ ALTER TABLE `rekening`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sertifikat`
+--
+ALTER TABLE `sertifikat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `status`
 --
 ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tstatistika`
+--
+ALTER TABLE `tstatistika`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -348,6 +476,11 @@ ALTER TABLE `admin`
 ALTER TABLE `diri`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
+-- AUTO_INCREMENT for table `info`
+--
+ALTER TABLE `info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT for table `jenjang`
 --
 ALTER TABLE `jenjang`
@@ -358,20 +491,35 @@ ALTER TABLE `jenjang`
 ALTER TABLE `lokasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
+-- AUTO_INCREMENT for table `notif`
+--
+ALTER TABLE `notif`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `pks`
 --
 ALTER TABLE `pks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `rekening`
 --
 ALTER TABLE `rekening`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `sertifikat`
+--
+ALTER TABLE `sertifikat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+--
+-- AUTO_INCREMENT for table `tstatistika`
+--
+ALTER TABLE `tstatistika`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user`
 --

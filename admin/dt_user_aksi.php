@@ -32,9 +32,9 @@ $jenis_jabatan= $_POST['jenis_jabatan'];
     }else {
 
 $data=mysqli_query($koneksi, "insert into diri values (NULL,'$nip','$password','$nama','$tempat','$tanggal','$goldar','$nik','$status','$alamat'
-,'$email','$npwp','$nip','$telpon1','$telpon2','$bpjs','$serata','$jurusan','$univ','$id_lokasi','$id_status','$id_jabatan','$id_jj','$nakes','$jenis_jabatan','')");
-
-    echo "<script>window.alert('Berhasil Menambahkan Data')
-    window.location='dt_user.php'</script>";
+,'$email','$npwp','$nip','$telpon1','$telpon2','$bpjs','$serata','$jurusan','$univ','$id_lokasi','$id_status','$id_jabatan','$id_jj','$nakes','$jenis_jabatan','','0')");
+var_dump($data);die;
+    // echo "<script>window.alert('Berhasil Menambahkan Data')
+    // window.location='dt_user.php'</script>";
 
     }
