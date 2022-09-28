@@ -36,7 +36,7 @@
                 <div class="panel-body">
 
                     <div class="pull-right">
-                        <a href="arsip.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+                        <a href="rekening_karyawan.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
                     </div>
                     <br>
                     <br>
