@@ -135,19 +135,19 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="caption pro-sl-hd">
-                                    <span class="caption-subject"><b>Grafik pengunduhan arsip</b></span>
+                                    <!-- <span class="caption-subject"><b>Grafik pengunduhan arsip</b></span> -->
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="actions graph-rp graph-rp-dl">
-                                    <p>Grafik jumlah unduh arsip perhari selama sebulan</p>
+                                    <!-- <p>Grafik jumlah unduh arsip perhari selama sebulan</p> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                     <ul class="list-inline cus-product-sl-rp">
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #006DF0;"><?php echo $totalpengunjung; ?></i>Jumlah Unduhan</h5>
+                            <!-- <h5><i class="fa fa-circle" style="color: #006DF0;"><?php echo $totalpengunjung; ?></i>Jumlah Unduhan</h5> -->
                         </li>
                     </ul>
                     <div id="extra-area-chart" style="height: 356px;"></div>

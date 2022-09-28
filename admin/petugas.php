@@ -76,6 +76,7 @@
                             <td><?php echo $p['admin_username'] ?></td>
                             <td class="text-center">
                                 <div class="btn-group">
+                                    <a href="petugas_edit.php?id=<?php echo $p['admin_id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
                                     <a href="petugas_hapus.php?id=<?php echo $p['admin_id']; ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                                 </div>
                             </td>

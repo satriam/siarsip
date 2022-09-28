@@ -47,22 +47,22 @@
 
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" name="nama" required="required">
+                            <input type="text" class="form-control" name="admin_nama" required="required">
                         </div>
 
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" class="form-control" name="username" required="required">
+                            <input type="text" class="form-control" name="admin_username" required="required">
                         </div>
 
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" name="password" required="required">
+                            <input type="password" class="form-control" name="admin_password" required="required">
                         </div>
 
                         <div class="form-group">
                             <label>Foto</label>
-                            <input type="file" name="foto">
+                            <input type="file" name="admin_foto">
                         </div>
 
                         <div class="form-group">

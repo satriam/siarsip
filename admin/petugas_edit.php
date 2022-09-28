@@ -44,7 +44,7 @@
 
                     <?php 
                     $id = $_GET['id'];              
-                    $data = mysqli_query($koneksi, "select * from petugas where petugas_id='$id'");
+                    $data = mysqli_query($koneksi, "select * from admin where admin_id='$id'");
                     while($d = mysqli_fetch_array($data)){
                         ?>
 
@@ -52,24 +52,24 @@
 
                             <div class="form-group">
                                 <label>Nama</label>
-                                <input type="hidden" name="id" value="<?php echo $d['petugas_id']; ?>">
-                                <input type="text" class="form-control" name="nama" required="required" value="<?php echo $d['petugas_nama']; ?>">
+                                <input type="hidden" name="admin_id" value="<?php echo $d['admin_id']; ?>">
+                                <input type="text" class="form-control" name="admin_nama" required="required" value="<?php echo $d['admin_nama']; ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" class="form-control" name="username" required="required" value="<?php echo $d['petugas_username']; ?>">
+                                <input type="text" class="form-control" name="admin_username" required="required" value="<?php echo $d['admin_username']; ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" name="admin_password">
                                 <small>Kosongkan jika tidak ingin mengubah password.</small>
                             </div>
 
                             <div class="form-group">
                                 <label>Foto</label>
-                                <input type="file" name="foto">
+                                <input type="file" name="admin_foto">
                                 <small>Kosongkan jika tidak ingin mengubah foto.</small>
                             </div>
 

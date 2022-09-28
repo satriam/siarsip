@@ -2,9 +2,9 @@
 include '../koneksi.php';
 $id = $_GET['id'];
 
-$data = mysqli_query($koneksi, "select * from petugas where petugas_id='$id'");
+$data = mysqli_query($koneksi, "select * from admin where admin_id='$id'");
 $d = mysqli_fetch_assoc($data);
-$foto = $d['petugas_foto'];
+$foto = $d['admin_foto'];
 unlink("../gambar/petugas/$foto");
-mysqli_query($koneksi, "delete from petugas where petugas_id='$id'");
+mysqli_query($koneksi, "delete from admin where admin_id='$id'");
 header("location:petugas.php");

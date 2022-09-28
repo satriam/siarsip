@@ -48,16 +48,13 @@
                     $data = mysqli_query($koneksi, "select pks.id,diri.id as id_diri,diri.nama,pks.akhir_pks,pks.mulai1,pks.mulai2,pks.mulai3,pks.mulai4,pks.akhir1,pks.akhir2,pks.akhir3,pks.akhir4 from pks INNER JOIN diri ON pks.id_diri = diri.id where pks.id='$id' ");
                     while($d = mysqli_fetch_array($data)){
                         ?>
-                    <form method="post" action="pks_tambah_aksi.php" >
+                    <form method="post" action="pks_update_aksi.php" >
                         <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
                         <input type="hidden" name="id_diri" value="<?php echo $d['id_diri']; ?>">
                        <div class=" form-group">
                             <label>Nama</label>
-                            
                                 <input type="text" class="form-control" value="<?php echo $d['nama'];?>" readonly>
-                               
-                           
-                           
+
                         </div>
 
                          <div class="form-group">
