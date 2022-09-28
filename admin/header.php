@@ -110,6 +110,9 @@
                         <li>
                             <a href="pks.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">PKS</span></a>
                         </li>
+                        <li>
+                            <a href="gaji.php" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Gaji</span></a>
+                        </li>
                        
                         
 			
