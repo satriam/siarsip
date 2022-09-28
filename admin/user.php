@@ -32,12 +32,10 @@
         </div>
         <div class="panel-body">
 
-            <div class="pull-right">
+            <!-- <div class="pull-right">
                 <a href="user_tambah.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah user</a>
-            </div>
-            <br>
-            <br>
-            <br>
+            </div> -->
+          
 
             <table id="table" class="table table-bordered table-striped table-hover table-datatable">
                 <thead>
@@ -75,8 +73,8 @@
                             <td><?php echo $p['username'] ?></td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <a href="user_edit.php?id=<?php echo $p['user_id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
-                                    <a href="user_hapus.php?id=<?php echo $p['user_id']; ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                                    <a href="user_edit.php?id=<?php echo $p['id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
+                                    <!-- <a href="user_hapus.php?id=<?php echo $p['user_id']; ?>" class="btn btn-default"><i class="fa fa-trash"></i></a> -->
                                 </div>
                             </td>
                         </tr>

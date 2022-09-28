@@ -44,7 +44,7 @@
 
                     <?php 
                     $id = $_GET['id'];              
-                    $data = mysqli_query($koneksi, "select * from user where user_id='$id'");
+                    $data = mysqli_query($koneksi, "select * from diri where id='$id'");
                     while($d = mysqli_fetch_array($data)){
                         ?>
 
@@ -52,13 +52,13 @@
 
                             <div class="form-group">
                                 <label>Nama</label>
-                                <input type="hidden" name="id" value="<?php echo $d['user_id']; ?>">
-                                <input type="text" class="form-control" name="nama" required="required" value="<?php echo $d['user_nama']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
+                                <input type="text" class="form-control" name="nama" required="required" value="<?php echo $d['nama']; ?>" readonly>
                             </div>
 
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" class="form-control" name="username" required="required" value="<?php echo $d['user_username']; ?>">
+                                <input type="text" class="form-control" name="username" required="required" value="<?php echo $d['username']; ?>" readonly>
                             </div>
 
                             <div class="form-group">
@@ -67,11 +67,11 @@
                                 <small>Kosongkan jika tidak ingin mengubah password.</small>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Foto</label>
                                 <input type="file" name="foto">
                                 <small>Kosongkan jika tidak ingin mengubah foto.</small>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <label></label>
